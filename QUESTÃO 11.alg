@@ -1,13 +1,15 @@
-algoritmo "SomaSerie"
+algoritmo "SomaSerieEspecial"
 
-funcao somaSerie(N: inteiro): real
+funcao somaSerieEspecial(N: inteiro): real
 var
-    S: real
+    S, numerador, denominador: real
     i: inteiro
 inicio
     S := 0
     para i de 1 ate N faca
-        S := S + 1 / i
+        numerador := i * i + 1
+        denominador := i + 3
+        S := S + numerador / denominador
     fimpara
     retorne S
 fimfuncao
@@ -20,12 +22,13 @@ inicio
     escreva("Digite um número inteiro e positivo: ")
     leia(numero)
     se numero > 0 entao
-        resultado := somaSerie(numero)
+        resultado := somaSerieEspecial(numero)
         escreval("O valor de S é: ", resultado)
     senao
         escreval("Número inválido. Por favor, digite um número inteiro e positivo.")
     fimse
 fimalgoritmo
+
 
 
 
